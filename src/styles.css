@@ -1,0 +1,223 @@
+body {
+  background-color: #d4dce8;
+}
+.wrapper {
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  background: linear-gradient(#48698b, #fff);
+  box-sizing: border-box;
+  padding: 5px;
+  width: 495px;
+  height: 200px;
+  border-radius: 100px;
+}
+
+.toggler {
+  --cloud: #d0ecfd;
+  --cloud2: #add5f6;
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: radial-gradient(circle at 97% 47%, var(--cloud) 50px, #0000 0),
+    radial-gradient(circle at 81% 71%, var(--cloud) 35px, #0000 0),
+    radial-gradient(circle at 63% 89%, var(--cloud) 45px, #0000 0),
+    radial-gradient(circle at 42% 93%, var(--cloud) 35px, #0000 0),
+    radial-gradient(circle at 74% 88%, var(--cloud) 35px, #0000 0),
+    radial-gradient(circle at 92% 88%, var(--cloud) 70px, #0000 0),
+    radial-gradient(circle at 51% 99%, var(--cloud) 30px, #0000 0),
+    radial-gradient(circle at 3% 48%, var(--cloud) 50px, #0000 0),
+    radial-gradient(circle at 20% 90%, var(--cloud) 70px, #0000 0),
+    radial-gradient(circle at 33% 100%, var(--cloud) 35px, #0000 0),
+    radial-gradient(circle at 8% 70%, var(--cloud) 45px, #0000 0),
+    radial-gradient(circle at 94% 22%, var(--cloud2) 40px, #0000 0),
+    radial-gradient(circle at 75% 54%, var(--cloud2) 45px, #0000 0),
+    radial-gradient(circle at 50% 77%, var(--cloud2) 55px, #0000 0),
+    radial-gradient(circle at 65% 69%, var(--cloud2) 30px, #0000 0),
+    radial-gradient(circle at 87% 42%, var(--cloud2) 30px, #0000 0),
+    radial-gradient(circle at 7% 38%, var(--cloud2) 50px, #0000 0),
+    radial-gradient(circle at 30% 70%, var(--cloud2) 60px, #0000 0),
+    radial-gradient(circle at 18% 55%, var(--cloud2) 40px, #0000 0), #43aaf2;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.toggler::after {
+  content: "";
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 10px 20px 10px rgba(1, 1, 1, 0.4);
+}
+
+.toggler[aria-checked="true"] {
+  background-color: #252637;
+  background-position: 0 200px;
+}
+
+.ballWrapper {
+  border-radius: 100%;
+  position: absolute;
+  top: 10px;
+  left: 13px;
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 165px;
+  width: 165px;
+  padding: 4px;
+  box-sizing: border-box;
+  background: conic-gradient(
+    #fff,
+    #45627e 175deg,
+    #be7900 185deg 225deg,
+    #fffd99 315deg 355deg,
+    #fff 360deg
+  );
+  background-size: 0;
+
+  box-shadow: 0 0 0 55px rgba(255, 255, 255, 0.15),
+    0 0 0 105px rgba(255, 255, 255, 0.15), 0 0 0 155px rgba(255, 255, 255, 0.1),
+    0 20px 20px 10px rgba(1, 1, 1, 0.6);
+}
+
+.ballWrapper::after {
+  z-index: 10;
+  content: "";
+  width: inherit;
+  height: inherit;
+  background: inherit;
+  background-size: 300% 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: inherit;
+}
+
+[aria-checked="true"] .ballWrapper {
+  left: 307px;
+  background-position: 100%;
+}
+
+.ball {
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 157px;
+  height: 157px;
+  border-radius: 100%;
+  background: #fcd231;
+}
+
+.ball::after {
+  z-index: 11;
+  content: "";
+  width: 157px;
+  height: 157px;
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  border-radius: inherit;
+  background: inherit;
+}
+
+[aria-checked="true"] .ball {
+  background: #d1d5de;
+}
+
+.krator1::after,
+.krator2::after,
+.krator3::after {
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  z-index: 12;
+  content: "";
+  position: absolute;
+  background-color: #a4b2c2;
+  border-radius: 100%;
+}
+.krator1::after {
+  top: 85px;
+  left: 50px;
+  width: 50px;
+  height: 50px;
+  box-shadow: inset 0 3px 0px #86929f;
+}
+.krator2::after {
+  top: 53px;
+  left: 65px;
+  width: 25px;
+  height: 25px;
+  box-shadow: inset 0 1px 0px #86929f;
+}
+
+.krator3::after {
+  top: 63px;
+  left: 100px;
+  width: 38px;
+  height: 38px;
+  box-shadow: inset 0 2px 0px #86929f;
+}
+
+[aria-checked="true"] .krator1::after {
+  opacity: 1;
+  top: 55px;
+  left: 20px;
+}
+[aria-checked="true"] .krator2::after {
+  opacity: 1;
+  top: 23px;
+  left: 70px;
+}
+[aria-checked="true"] .krator3::after {
+  opacity: 1;
+  top: 93px;
+  left: 100px;
+}
+
+.stars {
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+  --star: #dedde1;
+  --star2: #dedde16c;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 6% 49%, var(--star) 3px, #0000 0),
+    radial-gradient(circle at 35.5% 62%, var(--star) 3px, #0000 0),
+    radial-gradient(circle at 35.5% 20%, var(--star) 3px, #0000 0),
+    radial-gradient(circle at 56% 48%, var(--star) 3px, #0000 0),
+    radial-gradient(circle at 18.5% 78%, var(--star) 3px, #0000 0),
+    radial-gradient(circle at 18.5% 78%, var(--star2) 6px, #0000 0),
+    radial-gradient(circle at 45% 36%, var(--star) 3px, #0000 0),
+    radial-gradient(circle at 45% 36%, var(--star2) 6px, #0000 0),
+    radial-gradient(ellipse 40px 10px at 18.5% 19%, var(--star) 9px, #0000 0),
+    radial-gradient(ellipse 10px 40px at 18.5% 19%, var(--star) 2.5px, #0000 0),
+    radial-gradient(circle at 18.5% 19%, var(--star) 5px, #0000 0),
+    radial-gradient(ellipse 40px 10px at 57.5% 19%, var(--star) 9px, #0000 0),
+    radial-gradient(ellipse 10px 40px at 57.5% 19%, var(--star) 2.5px, #0000 0),
+    radial-gradient(circle at 57.5% 19%, var(--star) 5px, #0000 0),
+    radial-gradient(ellipse 40px 10px at 51% 78%, var(--star) 9px, #0000 0),
+    radial-gradient(ellipse 10px 40px at 51% 78%, var(--star) 2.5px, #0000 0),
+    radial-gradient(circle at 51% 78%, var(--star) 5px, #0000 0),
+    radial-gradient(circle at 25% 49%, var(--star) 3px, #0000 0);
+  opacity: 0;
+  filter: blur(0.5px);
+}
+
+[aria-checked="true"] .stars {
+  opacity: 1;
+  animation: stars 1s ease-in-out infinite;
+  animation-delay: 0.7s;
+}
+
+@keyframes stars {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
