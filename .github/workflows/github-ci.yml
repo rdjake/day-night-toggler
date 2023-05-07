@@ -1,0 +1,21 @@
+name: Deploy 
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Get code
+    - uses: actions/checkout@v3
+
+    - name: Install Deps
+      run: npm ci
+    - name: Build project
+      run: npm run build
+
+    - name: Deploying the static website to gh-pages
+      run: npm run deploy
