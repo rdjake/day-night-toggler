@@ -165,11 +165,13 @@ body {
   top: 55px;
   left: 20px;
 }
+
 [aria-checked="true"] .krator2::after {
   opacity: 1;
   top: 23px;
   left: 70px;
 }
+
 [aria-checked="true"] .krator3::after {
   opacity: 1;
   top: 93px;
